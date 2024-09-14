@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { Navbar } from '@/components/Navbar';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
+import { Navbar } from '@/components/Navbar';
 import { BaseTemplate } from '@/templates/BaseTemplate';
 
 export default function Layout(props: {
