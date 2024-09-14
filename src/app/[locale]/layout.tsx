@@ -3,7 +3,7 @@ import '@/styles/global.css';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-
+import { Kanit } from 'next/font/google'
 import { DemoBadge } from '@/components/DemoBadge';
 import { AppConfig } from '@/utils/AppConfig';
 
@@ -32,6 +32,12 @@ export const metadata: Metadata = {
   ],
 };
 
+const kanit = Kanit({
+  subsets: ['latin'],
+  weight: ['200', '400'],
+  variable: '--font-kanit',
+})
+
 export function generateStaticParams() {
   return AppConfig.locales.map(locale => ({ locale }));
 }
@@ -47,7 +53,7 @@ export default function RootLayout(props: {
 
   return (
     <html lang={props.params.locale}>
-      <body>
+      <body className={`${kanit.variable}`}>
         <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
