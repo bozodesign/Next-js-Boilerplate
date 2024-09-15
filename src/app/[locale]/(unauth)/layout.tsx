@@ -2,10 +2,11 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
+import { Footer } from '@/components/Fotter';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import { Navbar } from '@/components/Navbar';
 import { BaseTemplate } from '@/templates/BaseTemplate';
-import { Footer } from '@/components/Fotter';
+
 export default function Layout(props: {
   children: React.ReactNode;
   params: { locale: string };
