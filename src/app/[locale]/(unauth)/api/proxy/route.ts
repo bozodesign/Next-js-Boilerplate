@@ -12,7 +12,7 @@ export async function GET() {
     const $ = cheerio.load(html);
 
     // Extract data from the HTML
-    const posts = [];
+    const posts: any[] = [];
     $('ul.pt-list > li.pt-list-item').each((i, element) => {
       // Extract title and link
       const title = $(element).find('.pt-list-item__title h2 a').text().trim();
@@ -31,7 +31,7 @@ export async function GET() {
         }
       }
 
-      const tags = [];
+      const tags: any[] = [];
       $(element).find('.pt-list-item__tag a').each((j, tagElement) => {
         tags.push($(tagElement).text().trim());
       });
