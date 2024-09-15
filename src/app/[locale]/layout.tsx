@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { Kanit } from 'next/font/google';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-
+import {NextUIProvider} from "@nextui-org/react";
 import { DemoBadge } from '@/components/DemoBadge';
 import { AppConfig } from '@/utils/AppConfig';
 
@@ -55,6 +55,7 @@ export default function RootLayout(props: {
   return (
     <html lang={props.params.locale}>
       <body className={`${kanit.variable}`}>
+      <NextUIProvider>
         <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
@@ -63,6 +64,7 @@ export default function RootLayout(props: {
 
           <DemoBadge />
         </NextIntlClientProvider>
+        </NextUIProvider>
       </body>
     </html>
   );

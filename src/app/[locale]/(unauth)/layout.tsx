@@ -5,7 +5,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import { Navbar } from '@/components/Navbar';
 import { BaseTemplate } from '@/templates/BaseTemplate';
-
+import { Footer } from '@/components/Fotter';
 export default function Layout(props: {
   children: React.ReactNode;
   params: { locale: string };
@@ -89,6 +89,7 @@ export default function Layout(props: {
       >
         <div className="py-5 text-xl [&_p]:my-6">{props.children}</div>
       </BaseTemplate>
+      <Footer />
     </>
   );
 }
