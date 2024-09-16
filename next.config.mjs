@@ -16,6 +16,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 /** @type {import('next').NextConfig} */
+
 export default withSentryConfig(
   bundleAnalyzer(
     withNextIntlConfig({
@@ -26,6 +27,23 @@ export default withSentryConfig(
       reactStrictMode: true,
       experimental: {
         serverComponentsExternalPackages: ['@electric-sql/pglite'],
+      },
+      images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: '**.ptcdn.info',
+            port: '',
+            
+          },
+          {
+            protocol: 'https',
+            hostname: 'ptcdn.info',
+            port: '',
+            
+          },
+        ],
+        
       },
     }),
   ),
@@ -66,4 +84,6 @@ export default withSentryConfig(
     // Disable Sentry telemetry
     telemetry: false,
   },
+  
 );
+

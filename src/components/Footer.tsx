@@ -5,7 +5,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 export const Footer = () => (
 
-  <footer className="kanit relative w-full overflow-hidden border-0 bg-gradient-to-tr from-[#f7f7f7] to-zinc-50 pb-6 pt-0 font-normal text-[#222]">
+  <footer className="w-full overflow-hidden border-0 bg-gradient-to-tr from-[#f7f7f7] to-zinc-50 pb-6 pt-0 font-normal text-[#222]">
     <Image
       src="/img/valley-white.svg"
       alt="valley white"
@@ -25,7 +25,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               ติดต่อทีมงาน Pantip
             </a>
@@ -33,7 +33,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               ติดต่อลงโฆษณา
             </a>
@@ -41,7 +41,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               ร่วมงานกับ Pantip
             </a>
@@ -56,7 +56,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               กฎ กติกาและมารยาท
             </a>
@@ -64,7 +64,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               คำแนะนำการโพสต์
             </a>
@@ -72,7 +72,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               นโยบายเกี่ยวกับข้อมูลส่วนบุคคล
             </a>
@@ -80,7 +80,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               สิทธิ์การใช้งานของสมาชิก
             </a>
@@ -88,7 +88,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               Download App Pantip
             </a>
@@ -96,7 +96,7 @@ export const Footer = () => (
           <li>
             <a
               href="#about-section"
-              className="hover:text-gold-gal transition duration-300"
+              className="hover:text-indigo-500 transition duration-300"
             >
               Pantip Certified Developer
             </a>
@@ -113,32 +113,32 @@ export const Footer = () => (
         <div className="mt-3 flex space-x-4">
           <a
             href="https://www.facebook.com/pantipdotcom/"
-            className="bg-gold-gal rounded-full p-2 transition duration-300 hover:bg-black/20"
+            className=" rounded-full p-2 transition duration-300 hover:bg-black/20"
           >
             <FaFacebook className="size-6" />
           </a>
           <a
             href="https://x.com/Pantip1996"
-            className="bg-gold-gal rounded-full p-2 transition duration-300 hover:bg-black/20"
+            className=" rounded-full p-2 transition duration-300 hover:bg-black/20"
           >
             <FaXTwitter className="size-6" />
           </a>
           <a
             href="https://www.youtube.com/@pantipchannel"
-            className="bg-gold-gal rounded-full p-2 transition duration-300 hover:bg-black/20"
+            className=" rounded-full p-2 transition duration-300 hover:bg-black/20"
           >
             <FaYoutube className="size-6" />
           </a>
           <a
             href="https://www.instagram.com/pantipdotcom"
-            className="bg-gold-gal rounded-full p-2 transition duration-300 hover:bg-black/20"
+            className=" rounded-full p-2 transition duration-300 hover:bg-black/20"
           >
             <FaInstagramSquare className="size-6" />
           </a>
 
           <a
             href="https://www.tiktok.com/@pantip1996"
-            className="bg-gold-gal rounded-full p-2 transition duration-300 hover:bg-black/20"
+            className=" rounded-full p-2 transition duration-300 hover:bg-black/20"
           >
             <AiFillTikTok className="size-6" />
           </a>

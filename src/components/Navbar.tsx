@@ -99,11 +99,9 @@ export const Navbar = () => {
       {/* Display search results or loading state */}
       {loading && <div>Loading...</div>}
       {!loading && results.length > 0 && (
-        <div className="search-results">
+        <div className="">
           <ul>
-            {results.map((result, index) => (
-              <li key={index}>{result.title}</li>
-            ))}
+            PANTIP.COM
           </ul>
         </div>
       )}
