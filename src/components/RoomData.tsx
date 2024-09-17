@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useSWR from 'swr';
 import { fetcher, formatTimeAgo, formatValue } from 'src/utils/GenericFn'
 import { Chip } from '@nextui-org/react';

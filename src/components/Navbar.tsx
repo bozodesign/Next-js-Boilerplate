@@ -28,11 +28,11 @@ export const Navbar = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          keyword: searchQuery, // The keyword to search
-          limit: 10, // Limit the number of results
-          type: 'all', // Specify the type of search
-          show_btn_search: 'true', // Include if the API requires this parameter
-          room_search: null, // Room search parameter
+          keyword: searchQuery, 
+          limit: 10, 
+          type: 'all', 
+          show_btn_search: 'true', 
+          room_search: null, 
         }),
       });
 
@@ -96,7 +96,7 @@ export const Navbar = () => {
           <div>เข้าสู่ระบบ/สมัครสมาชิก</div>
         </div>
       </div>
-      {/* Display search results or loading state */}
+     
       {loading && <div>Loading...</div>}
       {!loading && results.length > 0 && (
         <div className="">

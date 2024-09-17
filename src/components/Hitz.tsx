@@ -16,7 +16,6 @@ const truncateText = (text: string, maxLength: number) => {
 export default function Hitz({ hitzData }: any) {
   const [showAll, setShowAll] = useState(false);
 
-  // Show only the first 8 items if showAll is false
   const itemsToShow = showAll ? hitzData : hitzData.slice(0, 3);
   //console.log('hitzData:',hitzData)
   return (

@@ -5,7 +5,6 @@ import { formatTimeAgo, formatValue } from '@/utils/GenericFn';
 import { MdComment } from "react-icons/md";
 import { FaHeart, FaEye,FaAngleDoubleUp,FaAngleDoubleDown } from "react-icons/fa";
 import { IoMdPricetag } from "react-icons/io";
-import { title } from 'process';
 
 const truncateText = (text: string, maxLength: number) => {
   if (text.length > maxLength) {
