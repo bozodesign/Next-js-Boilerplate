@@ -22,10 +22,11 @@ export default function Pick({ pickData }: any) {
   return (
     <div>
 
-{itemsToShow.slice(0, 1)?.map((item: any, index: number) => (
+        {itemsToShow.slice(0, 1)?.map((item: any, index: number) => (
           <div key={item?.title+index} className='flex flex-col rounded-xl m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
-            <p className='font-semibold text-xl text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 70) : item?.title}</p>
+            <a href={`https://pantip.com/topic/${item?.topic_id}`} target='_blank' className='font-semibold text-xl text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 70) : item?.title}</a>
             <div className='relative mt-4  w-full h-56 border rounded-xl overflow-hidden aspect-square'>
+            <a href={`https://pantip.com/topic/${item?.topic_id}`} target='_blank'>
               {item?.thumbnail_url ? 
                 <Image
                   className='w-full h-full object-cover hover:scale-110 transition-all duration-500'
@@ -42,7 +43,7 @@ export default function Pick({ pickData }: any) {
                   width={768}
                   height={768}
                 />
-              }
+              }</a>
               <div className='absolute bottom-0 w-full px-2 py-1 mt-1 flex flex-row justify-between bg-black/50'>
                 <div className='flex flex-col'>
                   <p className='text-xs text-indigo-100 hover:text-amber-500'>
@@ -68,10 +69,11 @@ export default function Pick({ pickData }: any) {
       <div className='rounded-xl grid grid-flow-row grid-cols-2'>
         {itemsToShow.slice(1, 9)?.map((item: any, index: number) => (
           <div key={item?.title+index} className='flex flex-col justify-between rounded-xl m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
-            <div className='w-full font-semibold text-xl text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 90) : item?.title}</div>
+            <a href={`https://pantip.com/topic/${item?.topic_id}`} target='_blank' className='w-full font-semibold text-xl text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 90) : item?.title}</a>
             <div>
               <div className='flex flex-row gap-2 mt-1'>
                   <div className='w-1/4 relative h-12 border rounded-xl overflow-hidden aspect-square'>
+                  <a href={`https://pantip.com/topic/${item?.topic_id}`} target='_blank'>
                     {item?.thumbnail_url ? 
                       <Image
                         className='w-full h-full object-cover hover:scale-110 transition-all duration-500'
@@ -89,7 +91,7 @@ export default function Pick({ pickData }: any) {
                         height={300}
                       />
                     }
-                    
+                    </a>
                     
                   </div>
                   <div className='w-3/4 px-2 py-1 flex flex-row justify-between items-center bg-black/5 rounded-xl'>

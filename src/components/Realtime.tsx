@@ -24,11 +24,12 @@ export default function Realtime({ realtimeData }: any) {
     <div>
       <div className='rounded-lg grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 2xl:grid-cols-4'>
         {itemsToShow?.map((item: any, index: number) => (
-          <div key={title+index} className='flex flex-col justify-between rounded-2xl m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
-            <p className='font-semibold text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 50) : item?.title}</p>
+          <div key={item?.title+index} className='flex flex-col justify-between rounded-2xl m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
+            <a href={`https://pantip.com/topic/${item?.topic_id}`} target='_blank' className='font-semibold text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 50) : item?.title}</a>
             
             <div>
             <div className='relative mt-4 w-full h-56 border rounded-xl overflow-hidden aspect-square'>
+              <a href={`https://pantip.com/topic/${item?.topic_id}`} target='_blank'>
               {item?.thumbnail_url ? 
                 <Image
                   className='w-full h-full object-cover hover:scale-110 transition-all duration-500'
@@ -45,7 +46,7 @@ export default function Realtime({ realtimeData }: any) {
                   width={300}
                   height={300}
                 />
-              }
+              }</a>
               <div className='absolute bottom-0 w-full px-2 py-1 mt-1 flex flex-row justify-between bg-black/50'>
                 <div className='flex flex-col'>
                   <p className='text-xs text-indigo-100 hover:text-amber-500'>
