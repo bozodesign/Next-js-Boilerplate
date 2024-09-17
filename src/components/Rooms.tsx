@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import {Skeleton} from "@nextui-org/react";
 import { useState, useRef, useEffect } from 'react';
 import useSWR from 'swr';
 import { fetcher } from 'src/utils/GenericFn';
@@ -83,14 +84,12 @@ export const Rooms = () => {
       >
         <ul className="flex items-start mt-10 mb-3 bg-black/0" ref={menuRef}>
           {isLoading && (
-            <Image
-              className="transition-all"
-              src="/img/loading.svg"
-              alt="L o a d i n g . . . "
-              width="100"
-              height="100"
-            />
-          )}
+                Array.from({ length: 13 }).map((_, index) => (
+                <li key={index*100} className="flex justify-center mx-4 flex-col items-center gap-2">     
+                  <Skeleton className="rounded-full w-16 h-16"/>
+                  <Skeleton className="mt-2 h-3 w-16 rounded-lg"/>
+                </li>
+          )))}
           {roomLists?.map((item: any, index: number) => (
             <li
               key={item.name}

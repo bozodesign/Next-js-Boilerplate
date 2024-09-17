@@ -4,6 +4,7 @@ import fetch from 'node-fetch';
 
 export async function GET(req: Request, { params }: { params: { room: string } }) {
   const room = params.room;
+  req.headers.set('content-type', 'application/json');
   try {
     // Fetch the HTML from Pantip
     const response = await fetch('https://pantip.com/forum/' + room);
