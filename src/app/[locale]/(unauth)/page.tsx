@@ -1,12 +1,18 @@
 'use client'
+import { useState } from 'react';
 import useSWR from 'swr';
 import { fetcher } from 'src/utils/GenericFn'
 import Realtime from '@/components/Realtime';
 import Pick from '@/components/Pick';
 import Hitz from '@/components/Hitz';
 import RoomData from '@/components/RoomData';
-export default function Index() {
+import { FaAngleDoubleUp,FaAngleDoubleDown } from "react-icons/fa";
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store/store';
 
+export default function Index() {
+  const [showRoom, setShowRoom] = useState(true);
+  const selectedRoom = useSelector((state: RootState) => state.room.selectedRoom);
   const { data } = useSWR('/api/proxy', fetcher, {
     revalidateOnFocus: true,
   });
@@ -19,9 +25,10 @@ export default function Index() {
   return (
     <div className='w-full flex justify-center mt-32'>
       <div className='w-11/12 md:w-11/12 xl:w-[1280px]'>
-      <div className='border rounded-xl p-2 mt-5'>
-        <RoomData room='na' />
-      </div>
+      {selectedRoom && <div className='border rounded-xl p-2 mt-5'>
+        <div className='flex flex-row items-center gap-2 cursor-pointer text-zinc-500 hover:text-zinc-400' onClick={() => setShowRoom(!showRoom)}>{showRoom?<FaAngleDoubleUp />:<FaAngleDoubleDown />} {showRoom ? 'ซ่อน' : 'แสดง'}ห้อง : {selectedRoom.name}</div>
+        {showRoom && <RoomData room={selectedRoom.name_en} /> }
+      </div>}
       <div className='w-full my-2 rounded-xl p-3 bg-gradient-to-r from-zinc-200/50 to-gray-100/50'>
       
         <h2 className="text-base font-bold text-zinc-700">

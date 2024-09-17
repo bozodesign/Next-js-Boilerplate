@@ -9,17 +9,15 @@ import { AiFillPicture } from "react-icons/ai";
 
 function RoomData({ room }: any) {
 
-  if(room =='na'){
+  if(room == null){
     return <div />
   }
-  const { data, isLoading } = useSWR('/api/room/'+ room, fetcher, {
+  const { data } = useSWR('/api/room/'+ room, fetcher, {
     revalidateOnFocus: true,
   });
   const roomName = data?.nextData?.roomPlainObject?.nameTh || 'กำลังโหลด...'
   const tagHits = data?.nextData?.tagHits || []
   const topics = data?.nextData?.topics?.data || []
-  console.log(room,' : ',topics)
-  console.log('tagHits:',tagHits)
 
   return (
     <div>

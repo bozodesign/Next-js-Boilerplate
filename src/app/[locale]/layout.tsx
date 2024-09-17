@@ -5,11 +5,12 @@ import type { Metadata } from 'next';
 import { Kanit } from 'next/font/google';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-
-import { DemoBadge } from '@/components/DemoBadge';
 import { AppConfig } from '@/utils/AppConfig';
+import { ReduxProvider } from '@/components/ReduxProvider';
 
 export const metadata: Metadata = {
+  title: 'PANTIP.COM',
+  description: 'Redesign by fhunn',
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -61,9 +62,10 @@ export default function RootLayout(props: {
             locale={props.params.locale}
             messages={messages}
           >
-            {props.children}
-
-            <DemoBadge />
+              <ReduxProvider>
+                {props.children}
+              </ReduxProvider>
+            
           </NextIntlClientProvider>
         </NextUIProvider>
       </body>
