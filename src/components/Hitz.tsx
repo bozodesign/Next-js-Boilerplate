@@ -21,11 +21,11 @@ export default function Hitz({ hitzData }: any) {
   //console.log('hitzData:',hitzData)
   return (
     <div>
-      <div className='rounded-lg grid grid-flow-row grid-cols-1'>
+      <div className='rounded-xl grid grid-flow-row grid-cols-1'>
         {itemsToShow?.map((item: any, index: number) => (
-          <div key={item?.title+index} className='flex flex-col rounded-lg m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
+          <div key={item?.title+index} className='flex flex-col rounded-xl m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
             <p className='font-semibold text-xl text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 70) : item?.title}</p>
-            <div className='relative mt-4  w-full h-56 border rounded-lg overflow-hidden aspect-square'>
+            <div className='relative mt-4  w-full h-56 border rounded-xl overflow-hidden aspect-square'>
               {item?.thumbnail_url ? 
                 <Image
                   className='w-full h-full object-cover hover:scale-110 transition-all duration-500'

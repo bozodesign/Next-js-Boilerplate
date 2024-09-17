@@ -24,9 +24,11 @@ export default function Realtime({ realtimeData }: any) {
     <div>
       <div className='rounded-lg grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 2xl:grid-cols-4'>
         {itemsToShow?.map((item: any, index: number) => (
-          <div key={title+index} className='flex flex-col rounded-lg m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
+          <div key={title+index} className='flex flex-col justify-between rounded-2xl m-1 p-3 col-span-1 bg-white drop-shadow-lg'>
             <p className='font-semibold text-gray-600'>{item?.thumbnail_url ? truncateText(item?.title, 50) : item?.title}</p>
-            <div className='relative mt-4  w-full h-56 border rounded-lg overflow-hidden aspect-square'>
+            
+            <div>
+            <div className='relative mt-4 w-full h-56 border rounded-xl overflow-hidden aspect-square'>
               {item?.thumbnail_url ? 
                 <Image
                   className='w-full h-full object-cover hover:scale-110 transition-all duration-500'
@@ -62,6 +64,8 @@ export default function Realtime({ realtimeData }: any) {
               {item?.tags.map((tag: any, index: number) => (
                 <a key={item?.topic_id + index} href={'https://pantip.com/tag/'+tag?.name} target='_blank'><Chip className='opacity-75  hover:opacity-100 hover:scale-105 transition-all' startContent={<IoMdPricetag size={16} />} size="sm">{tag?.name}</Chip></a>
               ))}
+            </div>
+
             </div>
           </div>
         ))}
