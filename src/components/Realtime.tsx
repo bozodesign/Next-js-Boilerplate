@@ -18,7 +18,7 @@ export default function Realtime({ realtimeData }: any) {
   const [showAll, setShowAll] = useState(false);
 
   // Show only the first 8 items if showAll is false
-  const itemsToShow = showAll ? realtimeData : realtimeData.slice(0, 8);
+  const itemsToShow = showAll ? realtimeData : realtimeData.slice(0, 9);
   
   return (
     <div>
@@ -72,7 +72,7 @@ export default function Realtime({ realtimeData }: any) {
         ))}
       </div>
       {/* Show More / Show Less Button */}
-      {realtimeData.length > 8 && (
+      {realtimeData.length > 9 && (
         <div className='border w-full mt-4 text-end'>
           <div 
             className='px-4 py-2 text-gray-500 rounded cursor-pointer flex justify-center items-center gap-2' 

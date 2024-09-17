@@ -17,7 +17,7 @@ export default function Hitz({ hitzData }: any) {
   const [showAll, setShowAll] = useState(false);
 
   // Show only the first 8 items if showAll is false
-  const itemsToShow = showAll ? hitzData : hitzData.slice(0, 5);
+  const itemsToShow = showAll ? hitzData : hitzData.slice(0, 3);
   //console.log('hitzData:',hitzData)
   return (
     <div>
@@ -67,7 +67,7 @@ export default function Hitz({ hitzData }: any) {
         ))}
       </div>
       {/* Show More / Show Less Button */}
-      {hitzData.length > 8 && (
+      {hitzData.length > 3 && (
         <div className='border w-full mt-4 text-end'>
           <div 
             
